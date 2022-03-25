@@ -1,0 +1,13 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.LarkXRCloudApp.cpp.obj": [
+			"LarkXRCloudApp.cpp.obj",
+			"LarkXRCloudAppCompnent.cpp.obj"
+		],
+		"Module.LarkXRCloudApp.gen.cpp.obj": [
+			"LarkXRCloudApp.init.gen.cpp.obj",
+			"LarkXRCloudAppCompnent.gen.cpp.obj"
+		]
+	}
+}

@@ -1,0 +1,13 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-LarkXRCloudApp-0001.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\work\data_channel\unreal\app_plugin\Intermediate\Build\Win64\app_pluginEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\work\data_channel\unreal\app_plugin\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4Editor\Development\LarkXRCloudApp\Module.LarkXRCloudApp.cpp.obj"
+"D:\work\data_channel\unreal\app_plugin\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4Editor\Development\LarkXRCloudApp\Module.LarkXRCloudApp.gen.cpp.obj"
+"D:\work\data_channel\unreal\app_plugin\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4Editor\Development\LarkXRCloudApp\Default.rc2.res"
+/OUT:"D:\work\data_channel\unreal\app_plugin\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4Editor\Development\LarkXRCloudApp\UE4Editor-LarkXRCloudApp-0001.lib"
