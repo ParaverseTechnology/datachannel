@@ -7,7 +7,6 @@ Library/
 *.apk
 *.meta
 *.jar
-*.dll
 *.aar
 =====================================
 Visual Studio / MonoDevelop generated
