@@ -1,3 +1,4 @@
+using AOT;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -118,6 +119,7 @@ namespace lark
         public delegate void OnAiVoiceStream(AiVoiceStream aiVoiceStream);
 
         #region instance methods.
+        private static DataChannelNativeApi instance = null;
         // inner task
         private delegate void GUITask();
         private Queue<GUITask> TaskQueue = new Queue<GUITask>();
@@ -125,12 +127,13 @@ namespace lark
 
         DataChannelNativeApi()
         {
-            cs_on_taskstatus = c_on_taskstatus;
+            instance = this;
+/*            cs_on_taskstatus = c_on_taskstatus;
             cs_on_connected = c_on_connected;
             cs_on_data = c_on_data;
             cs_on_disconnected = c_on_disconnected;
 
-            cs_on_aivoice_callback = c_on_aivoice_callback;
+            cs_on_aivoice_callback = c_on_aivoice_callback;*/
         }
 
         private void Start()
@@ -178,7 +181,8 @@ namespace lark
         //************************************
         public void RegisterTaskstatusCallback()
         {
-            lr_client_register_taskstatus_callback(cs_on_taskstatus, IntPtr.Zero);
+            // lr_client_register_taskstatus_callback(cs_on_taskstatus, IntPtr.Zero);
+            lr_client_register_taskstatus_callback(c_on_taskstatus, IntPtr.Zero);
         }
         /// <summary>
         /// 开始连接数据通道。 
@@ -188,7 +192,8 @@ namespace lark
         public ApiRestult StartConnect(string taskId)
         {
             Debug.Log("start connect taskId " + taskId);
-            ApiRestult res = (ApiRestult)lr_client_start(taskId, cs_on_connected, cs_on_data, cs_on_disconnected, IntPtr.Zero);
+            // ApiRestult res = (ApiRestult)lr_client_start(taskId, cs_on_connected, cs_on_data, cs_on_disconnected, IntPtr.Zero);
+            ApiRestult res = (ApiRestult)lr_client_start(taskId, c_on_connected, c_on_data, c_on_disconnected, IntPtr.Zero);
             return res;
         }
         /// <summary>
@@ -244,7 +249,8 @@ namespace lark
         // Parameter: void * user_data
         public int RegisterAivoiceCallback()
         {
-            return lr_client_register_aivoice_callback(cs_on_aivoice_callback, IntPtr.Zero);
+            // return lr_client_register_aivoice_callback(cs_on_aivoice_callback, IntPtr.Zero);
+            return lr_client_register_aivoice_callback(c_on_aivoice_callback, IntPtr.Zero);
         }
         #endregion
 
@@ -254,27 +260,31 @@ namespace lark
         private delegate void on_connected(IntPtr user_data);
         private delegate void on_data(int type, IntPtr data, int size, IntPtr user_data);
         private delegate void on_disconnected(int code, IntPtr user_data);
-
-        private on_taskstatus cs_on_taskstatus;
-        private on_connected cs_on_connected;
-        private on_data cs_on_data;
-        private on_disconnected cs_on_disconnected;
-
-        private void c_on_taskstatus(bool status/*true:客户端连接 false:客户端断开*/, string taskId, IntPtr user_data)
+/*
+        private static on_taskstatus cs_on_taskstatus;
+        private static on_connected cs_on_connected;
+        private static on_data cs_on_data;
+        private static on_disconnected cs_on_disconnected;
+*/
+        [MonoPInvokeCallback(typeof(on_taskstatus))]
+        private static void c_on_taskstatus(bool status/*true:客户端连接 false:客户端断开*/, string taskId, IntPtr user_data)
         {
-            ScheduleTask(new GUITask(delegate {
-                onTaskStatus?.Invoke(status, taskId);
+            instance?.ScheduleTask(new GUITask(delegate {
+                instance?.onTaskStatus?.Invoke(status, taskId);
             }));
         }
 
-        private void c_on_connected(IntPtr user_data)
+        [MonoPInvokeCallback(typeof(on_connected))]
+        private static void c_on_connected(IntPtr user_data)
         {
             Debug.Log("on connected");
-            ScheduleTask(new GUITask(delegate {
-                onConnected?.Invoke();
+            instance?.ScheduleTask(new GUITask(delegate {
+                instance?.onConnected?.Invoke();
             }));
         }
-        private void c_on_data(int type, IntPtr data, int size, IntPtr user_data)
+
+        [MonoPInvokeCallback(typeof(on_data))]
+        private static void c_on_data(int type, IntPtr data, int size, IntPtr user_data)
         {
             byte[] array = new byte[size];
 
@@ -287,22 +297,24 @@ namespace lark
                 // string strMsg = Encoding.UTF8.GetString(array, 0, size > 0 ? size - 1 : size);
                 // update 20211018
                 string strMsg = Encoding.UTF8.GetString(array, 0, size);
-                ScheduleTask(new GUITask(delegate {
-                    onText?.Invoke(strMsg);
+                instance?.ScheduleTask(new GUITask(delegate {
+                    instance?.onText?.Invoke(strMsg);
                 }));
             }
             else
             {
-                ScheduleTask(new GUITask(delegate {
-                    onBinary?.Invoke(array);
+                instance?.ScheduleTask(new GUITask(delegate {
+                    instance?.onBinary?.Invoke(array);
                 }));
             }
         }
-        private void c_on_disconnected(int code, IntPtr user_data)
+
+        [MonoPInvokeCallback(typeof(on_disconnected))]
+        private static void c_on_disconnected(int code, IntPtr user_data)
         {
             Debug.Log("on disconnected " + code);
-            ScheduleTask(new GUITask(delegate {
-                onClose?.Invoke((ErrorCode)code);
+            instance?.ScheduleTask(new GUITask(delegate {
+                instance?.onClose?.Invoke((ErrorCode)code);
             }));
         }
         #endregion
@@ -323,9 +335,10 @@ namespace lark
         // callbacks
         private delegate void on_aivoice_callback(NativeAiVoicePacket packet, IntPtr user_data);
 
-        private on_aivoice_callback cs_on_aivoice_callback;
+        // private static on_aivoice_callback cs_on_aivoice_callback;
 
-        private void c_on_aivoice_callback(NativeAiVoicePacket packet, IntPtr user_data)
+        [MonoPInvokeCallback(typeof(on_aivoice_callback))]
+        private static void c_on_aivoice_callback(NativeAiVoicePacket packet, IntPtr user_data)
         {
             Debug.Log("c_on_aivoice_callback " + packet.voice_id + " " + Marshal.SizeOf(packet) + " " + packet.url);
             if (packet.url)
@@ -348,10 +361,10 @@ namespace lark
 
                 Debug.Log("c_on_aivoice_callback url0*** " + aiVoiceURL.online_url);
 
-                Debug.Assert(onAiVoiceURL != null);
+                // Debug.Assert(instance?.onAiVoiceURL != null);
 
-                ScheduleTask(new GUITask(delegate {
-                    onAiVoiceURL?.Invoke(aiVoiceURL);
+                instance?.ScheduleTask(new GUITask(delegate {
+                    instance?.onAiVoiceURL?.Invoke(aiVoiceURL);
                 }));
             }
             else
@@ -373,8 +386,8 @@ namespace lark
                 aiVoiceStream.slice_id = packet.slice_id;
                 aiVoiceStream.nlg = Encoding.UTF8.GetString(nalData, 0, packet.nlg_size);
 
-                ScheduleTask(new GUITask(delegate {
-                    onAiVoiceStream?.Invoke(aiVoiceStream);
+                instance?.ScheduleTask(new GUITask(delegate {
+                    instance?.onAiVoiceStream?.Invoke(aiVoiceStream);
                 }));
             }
         }

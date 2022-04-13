@@ -1,10 +1,14 @@
-#define ENABLE_NAUDIO
-
-using lark;
 // 是否使用 Naudio 加载MP3
+// NAudio 不支持 ENABLE_IL2CPP 
+#if ENABLE_MONO
+#define ENABLE_NAUDIO
+#endif
+
 #if ENABLE_NAUDIO
 using NAudio.Wave;
 #endif
+
+using lark;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -323,6 +327,8 @@ public class Demo : MonoBehaviour
         Debug.Log("OnAiVoiceURL " + aiVoiceURL.nlg + " url " + aiVoiceURL.online_url);
         receiveText.text = "收到智能语音 URL 文本: " + aiVoiceURL.nlg + " ;url " + aiVoiceURL.online_url;
 
+        // WARNING TODO
+        // NAudio 不支持 IL2CPP 
         _ = StartCoroutine(nameof(GetAudioClip), aiVoiceURL.online_url);
     }
 
@@ -342,7 +348,11 @@ public class Demo : MonoBehaviour
         }
         else
         {
+            // WARNING TODO
+            // NAudio 不支持 IL2CPP 
 #if ENABLE_NAUDIO
+            Debug.Log("download mp3 length " + www.downloadHandler.data.Length);
+
             byte[] results = www.downloadHandler.data;
 
             // 使用 NAudio 将 mp3 转换为 wave 播放
@@ -351,8 +361,10 @@ public class Demo : MonoBehaviour
                 var wo = new WaveOutEvent();
                 wo.Init(reader);
                 wo.Play();
+                // wo.Volume = 100;
                 while (wo.PlaybackState == PlaybackState.Playing)
                 {
+                    Debug.Log("playing... " + www.downloadHandler.data.Length);
                     yield return new WaitForSeconds(1);
                 }
             }
