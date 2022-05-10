@@ -1,10 +1,10 @@
-# LarkXR DataChannel SDK 3.2.4.2
+# LarkXR DataChannel SDK 3.2.5.1
 
 ## 简述
 
 * 通过调用本SDK与实现网页/移动客户端实现数据交互功能
 
-* 当前SDK支持服务端版3.2.4.0+
+* 当前SDK支持服务端版3.2.4.5+
 
 ## 类型定义
 
