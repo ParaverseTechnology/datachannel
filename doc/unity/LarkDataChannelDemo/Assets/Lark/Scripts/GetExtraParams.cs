@@ -4,8 +4,15 @@ using UnityEngine;
 
 namespace lark
 {
-    public class GetExtraParams : ApiBase<string>
+    public class GetExtraParams : ApiBase<List<GetExtraParams.Params>>
     {
+        [System.Serializable]
+        public class Params
+        {
+            public string paramKey;
+            public string paramVal;
+        }
+
         private const string METHOD = "/taskInfo/getExtraParams";
 
 
@@ -40,7 +47,7 @@ namespace lark
 
         public string Message { get; private set; } = "";
 
-        public string extraParams { get; private set; } = null;
+        public List<GetExtraParams.Params> extraParams { get; private set; } = null;
 
         public IEnumerator Send(string taskId)
         {
@@ -49,10 +56,10 @@ namespace lark
             yield return GetText(METHOD, param.ToString());
         }
 
-        protected override void OnApiResponseSuccess(ApiResponse<string> response)
+        protected override void OnApiResponseSuccess(ApiResponse<List<GetExtraParams.Params>> response)
         {
             base.OnApiResponseSuccess(response);
-            //Debug.Log("============ applist serrch result:" + response.code + "; list:" + response.result.Count);
+            // Debug.Log("============ taskInfo getExtraParams result:" + response.code + "; response:" + response.result.Count + " " + JsonUtility.ToJson(response.result[0]));
             if (IsCodeSuccess(response.code))
             {
                 IsResultSuccess = true;
@@ -63,16 +70,17 @@ namespace lark
             {
                 IsResultSuccess = false;
                 Message = response.message;
-                extraParams = "";
+                extraParams = null;
             }
         }
 
         protected override void OnFailed(string error)
         {
             base.OnFailed(error);
+            Debug.Log("OnFailed " + error);
             IsResultSuccess = false;
             Message = "";
-            extraParams = "";
+            extraParams = null;
         }
     }
 }

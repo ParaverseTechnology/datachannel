@@ -37,6 +37,7 @@ public class Demo : MonoBehaviour
     private GetTaskInfo getTaskInfo = new GetTaskInfo();
     private GetExtraParams getExtraParams = new GetExtraParams();
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -168,8 +169,13 @@ public class Demo : MonoBehaviour
     private IEnumerator GetExraParamsCoroutine()
     {
         yield return getExtraParams.Send(lark.LarkManager.Instance.TaskId);
-        if (getExtraParams.IsResultSuccess) {
-            receiveText.text = getExtraParams.extraParams;
+        if (getExtraParams.IsResultSuccess && getExtraParams.extraParams != null) {
+            string text = "[";
+            foreach(var i in getExtraParams.extraParams)
+            {
+                text += JsonUtility.ToJson(i) + ",";
+            }
+            receiveText.text = text + "]";
         }
         else
         {

@@ -151,7 +151,7 @@ namespace lark
                 else
                 {
                     // Show results as text
-                    //Debug.Log("============ get text success" + www.downloadHandler.text);
+                    // Debug.Log("============ get text success" + www.downloadHandler.text);
                     try
                     {
                         apiResponse = ApiResponse<ResultType>.ParseApiResponse(www.downloadHandler.text);
