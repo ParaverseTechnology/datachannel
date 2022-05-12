@@ -35,7 +35,7 @@
 #define WITH_CEF3 1
 #define WITH_LIVE_CODING 1
 #define UE_LIVE_CODING_ENGINE_DIR "E:\\work\\unreal\\engine\\UE_4.26\\Engine"
-#define UE_LIVE_CODING_PROJECT "D:\\work\\data_channel\\unreal\\app_plugin_426\\app_plugin_426.uproject"
+#define UE_LIVE_CODING_PROJECT "D:\\work\\data_channel\\datachannel\\doc\\unreal\\app_plugin_426\\app_plugin_426.uproject"
 #define UBT_MODULE_MANIFEST "UE4.modules"
 #define UBT_MODULE_MANIFEST_DEBUGGAME "UE4-Win64-DebugGame.modules"
 #define UBT_COMPILED_PLATFORM Win64

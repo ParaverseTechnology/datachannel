@@ -105,8 +105,19 @@ void ULarkXRCloudAppCompnent::cc_on_data(data_type type, const char* data, int s
 
 void ULarkXRCloudAppCompnent::cc_on_taskstatus(bool status, const char* taskId, void* user_data)
 {
-	((ULarkXRCloudAppCompnent*)user_data)->TaskID = UTF8_TO_TCHAR(taskId);
-	((ULarkXRCloudAppCompnent*)user_data)->p_FOnTaskStatus.Broadcast(status, UTF8_TO_TCHAR(taskId));
+	FString taskID = UTF8_TO_TCHAR(taskId);
+	((ULarkXRCloudAppCompnent*)user_data)->TaskID = taskID;
+	if (((ULarkXRCloudAppCompnent*)user_data)->bCallbackOnGameThread) {
+		AsyncTask(ENamedThreads::GameThread, [=]() {
+			// code to execute on game thread here
+			((ULarkXRCloudAppCompnent*)user_data)->p_FOnTaskStatus.Broadcast(status, taskID);
+			UE_LOG(LogTemp, Verbose, TEXT("Callback on game thread. task status %s %b"), *taskID, status);
+		});
+	}
+	else {
+		((ULarkXRCloudAppCompnent*)user_data)->p_FOnTaskStatus.Broadcast(status, taskID);
+		UE_LOG(LogTemp, Verbose, TEXT("task status %s %b"), *taskID, status);
+	}
 }
 
 void ULarkXRCloudAppCompnent::cc_on_disconnected(ErrorCode code, void* user_data)
