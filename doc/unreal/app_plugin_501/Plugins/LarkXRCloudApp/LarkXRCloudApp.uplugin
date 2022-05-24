@@ -1,0 +1,26 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "3.2.5.2",
+	"FriendlyName": "LarkXRCloudApp",
+	"Description": "Datachannel for larkxr system",
+	"Category": "Streaming",
+	"CreatedBy": "pingxingyun",
+	"CreatedByURL": "https://github.com/pingxingyun/datachannel",
+	"DocsURL": "https://github.com/pingxingyun/datachannel",
+	"MarketplaceURL": "",
+	"SupportURL": "https://www.pingxingyun.com/",
+	"EngineVersion": "5.0.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "LarkXRCloudApp",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64"
+			]
+		}
+	]
+}
