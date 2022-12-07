@@ -24,11 +24,10 @@
 /Zo
 /Zp8
 /wd4463
-/we4668
 /wd4244
 /wd4838
 /I .
-/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Source\LarkXRCloudApp\Private
+/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_426\Plugins\LarkXRCloudApp\Source\LarkXRCloudApp\Private
 /I ..\Intermediate\Build\Win64\UE4\Inc\CoreUObject
 /I Runtime
 /I Runtime\CoreUObject\Public
@@ -67,7 +66,6 @@
 /I Runtime\Core\Public\Math
 /I Runtime\Core\Public\Memory
 /I Runtime\Core\Public\MemPro
-/I Runtime\Core\Public\Microsoft
 /I Runtime\Core\Public\Misc
 /I Runtime\Core\Public\Modules
 /I Runtime\Core\Public\Modules\Boilerplate
@@ -102,7 +100,6 @@
 /I Runtime\Engine\Public\Internationalization
 /I Runtime\Engine\Public\Net
 /I Runtime\Engine\Public\Net\Util
-/I Runtime\Engine\Public\ODSC
 /I Runtime\Engine\Public\PacketHandlers
 /I Runtime\Engine\Public\Performance
 /I Runtime\Engine\Public\Physics
@@ -145,7 +142,6 @@
 /I Runtime\Json\Public
 /I Runtime\Json
 /I Runtime\Json\Public\Dom
-/I Runtime\Json\Public\JsonUtils
 /I Runtime\Json\Public\Policies
 /I Runtime\Json\Public\Serialization
 /I ..\Intermediate\Build\Win64\UE4\Inc\SlateCore
@@ -247,10 +243,6 @@
 /I Runtime\GameplayTags\Classes
 /I Runtime\GameplayTags\Public
 /I Runtime\GameplayTags
-/I ..\Intermediate\Build\Win64\UE4\Inc\DeveloperSettings
-/I Runtime\DeveloperSettings\Public
-/I Runtime\DeveloperSettings
-/I Runtime\DeveloperSettings\Public\Engine
 /I ..\Intermediate\Build\Win64\UE4\Inc\PacketHandler
 /I Runtime\PacketHandlers
 /I Runtime\PacketHandlers\PacketHandler\Classes
@@ -279,6 +271,10 @@
 /I Runtime\PhysicsCore
 /I Runtime\PhysicsCore\Public\Chaos
 /I Runtime\PhysicsCore\Public\PhysicalMaterials
+/I ..\Intermediate\Build\Win64\UE4\Inc\DeveloperSettings
+/I Runtime\DeveloperSettings\Public
+/I Runtime\DeveloperSettings
+/I Runtime\DeveloperSettings\Public\Engine
 /I ..\Intermediate\Build\Win64\UE4\Inc\Chaos
 /I Runtime\Experimental
 /I Runtime\Experimental\Chaos\Public
@@ -332,11 +328,11 @@
 /I ..\Intermediate\Build\Win64\UE4\Inc\AnimationCore
 /I Runtime\AnimationCore\Public
 /I Runtime\AnimationCore
-/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Inc\LarkXRCloudApp
-/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Source
-/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Source\LarkXRCloudApp\Public
-/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Source\LarkXRCloudApp
-/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Source\ThirdParty
+/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_426\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Inc\LarkXRCloudApp
+/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_426\Plugins\LarkXRCloudApp\Source
+/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_426\Plugins\LarkXRCloudApp\Source\LarkXRCloudApp\Public
+/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_426\Plugins\LarkXRCloudApp\Source\LarkXRCloudApp
+/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_426\Plugins\LarkXRCloudApp\Source\ThirdParty
 /I Runtime\Projects\Public
 /I Runtime\Projects
 /I Runtime\Projects\Public\Interfaces
@@ -369,12 +365,12 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
-/FI"D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Intermediate\Build\Win64\app_plugin\Development\Engine\SharedPCH.Engine.h"
-/Yu"D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Intermediate\Build\Win64\app_plugin\Development\Engine\SharedPCH.Engine.h"
-/Fp"D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Intermediate\Build\Win64\app_plugin\Development\Engine\SharedPCH.Engine.h.pch"
-"D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Development\LarkXRCloudApp\Module.LarkXRCloudApp.gen.cpp"
-/FI"D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Development\LarkXRCloudApp\Definitions.LarkXRCloudApp.h"
-/Fo"D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Development\LarkXRCloudApp\Module.LarkXRCloudApp.gen.cpp.obj"
+/FI"D:\work\data_channel\datachannel\doc\unreal\app_plugin_426\Intermediate\Build\Win64\app_plugin_426\Development\Engine\SharedPCH.Engine.h"
+/Yu"D:\work\data_channel\datachannel\doc\unreal\app_plugin_426\Intermediate\Build\Win64\app_plugin_426\Development\Engine\SharedPCH.Engine.h"
+/Fp"D:\work\data_channel\datachannel\doc\unreal\app_plugin_426\Intermediate\Build\Win64\app_plugin_426\Development\Engine\SharedPCH.Engine.h.pch"
+"D:\work\data_channel\datachannel\doc\unreal\app_plugin_426\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Development\LarkXRCloudApp\Module.LarkXRCloudApp.gen.cpp"
+/FI"D:\work\data_channel\datachannel\doc\unreal\app_plugin_426\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Development\LarkXRCloudApp\Definitions.LarkXRCloudApp.h"
+/Fo"D:\work\data_channel\datachannel\doc\unreal\app_plugin_426\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Development\LarkXRCloudApp\Module.LarkXRCloudApp.gen.cpp.obj"
 /TP
 /GR-
 /W4

@@ -1,4 +1,4 @@
-//--------------------------------------------------------------------------------------
+ï»¿//--------------------------------------------------------------------------------------
 // File: 	LarkXRAiVoice.h
 // Author: 	Kevin
 // Data:	2022/02/24
@@ -16,19 +16,19 @@ extern "C" {
 	struct AiVoicePacket
 	{
 		bool	url;				//true :online audio url(mp3) .false: audio pack (pcm)
-		unsigned int voice_id;		//ÓïÒôID
-		const char* online_url;		//Èç¹ûurlÎªtrue,¸Ã×Ö¶ÎÎªurlµØÖ·,·ñÔò¸Ã×Ö¶ÎÎªNULL 
-		int	    url_size;			//url³¤¶È °üº¬\0
-		const char* nlg;			//µ±Ç°ÓïÒô¶Ô½²µÄÎÄ±¾
-		int	    nlg_size;			//¶Ô½²ÎÄ±¾³¤¶È °üº¬\0
+		unsigned int voice_id;		//è¯­éŸ³ID
+		const char* online_url;		//å¦‚æœurlä¸ºtrue,è¯¥å­—æ®µä¸ºurlåœ°å€,å¦åˆ™è¯¥å­—æ®µä¸ºNULL 
+		int	    url_size;			//urlé•¿åº¦ ä¸åŒ…å«\0
+		const char* nlg;			//å½“å‰è¯­éŸ³å¯¹è®²çš„æ–‡æœ¬
+		int	    nlg_size;			//å¯¹è®²æ–‡æœ¬é•¿åº¦ ä¸åŒ…å«\0
 
-		//Èç¹ûURLÎªfalse ÄÇÃ´ÏÂÃæ×Ö¶ÎÃèÊöÃ¿Ò»¸öpcm°ü
-		unsigned int slice_id;		//Ò»¸öÓïÒô·ÖÆ¬ID
+		//å¦‚æœURLä¸ºfalse é‚£ä¹ˆä¸‹é¢å­—æ®µæè¿°æ¯ä¸€ä¸ªpcmåŒ…
+		unsigned int slice_id;		//ä¸€ä¸ªè¯­éŸ³åˆ†ç‰‡ID
 		int		samples_per_sec;	//eg.16000
 		int		channels;		    //eg.1
-		const char* audio;			//Êı¾İ°üÖ¸Õë,Èç¹û url Îªtrue ¸Ã×Ö¶ÎÎª¿Õ
-		int		size_byte;			//Ã¿Ò»°üµÄ×Ö½ÚÊı
-		bool	last_packet;		//ÊÇ·ñÎª×îºóÒ»°ü
+		const char* audio;			//æ•°æ®åŒ…æŒ‡é’ˆ,å¦‚æœ url ä¸ºtrue è¯¥å­—æ®µä¸ºç©º
+		int		size_byte;			//æ¯ä¸€åŒ…çš„å­—èŠ‚æ•°
+		bool	last_packet;		//æ˜¯å¦ä¸ºæœ€åä¸€åŒ…
 	};
 	typedef void(*on_aivoice_callback)(struct AiVoicePacket* packet,void* user_data);
 
@@ -37,8 +37,8 @@ extern "C" {
 	// Method:    lr_client_register_aivoice_callback
 	// FullName:  lr_client_register_aivoice_callback
 	// Access:    public 
-	// Returns:   XR_SUCCESS:×¢²á³É¹¦	 XR_ERROR_INTERFACE_FAILED:Ã»ÓĞµ÷ÓÃ r_client_start XR_ERROR_SERVER_UNSUPPORT:Êı¾İÍ¨µÀ²»Ö§³Ö/ÖÇÄÜÓïÒô²»Ö§³Ö
-	// Qualifier: µ÷ÓÃ´Ëº¯ÊıÒ»¶¨ÒªÔÙlr_client_start³É¹¦£¬²¢ÇÒ»Øµ÷º¯ÊıÒ²·µ»Ø³É¹¦ºóÔÙµ÷ÓÃ
+	// Returns:   XR_SUCCESS:æ³¨å†ŒæˆåŠŸ	 XR_ERROR_INTERFACE_FAILED:æ²¡æœ‰è°ƒç”¨ r_client_start XR_ERROR_SERVER_UNSUPPORT:æ•°æ®é€šé“ä¸æ”¯æŒ/æ™ºèƒ½è¯­éŸ³ä¸æ”¯æŒ
+	// Qualifier: è°ƒç”¨æ­¤å‡½æ•°ä¸€å®šè¦å†lr_client_startæˆåŠŸï¼Œå¹¶ä¸”å›è°ƒå‡½æ•°ä¹Ÿè¿”å›æˆåŠŸåå†è°ƒç”¨
 	// Parameter: on_aivoice_callback cb
 	// Parameter: void * user_data
 	//************************************
