@@ -1,5 +1,5 @@
 // Lark Server 访问地址
-var serverAddr = "192.168.31.120:8585";
+var serverAddr = "192.168.0.55:8181";
 
 var config = {
 	userLocalIP: true,
@@ -7,7 +7,7 @@ var config = {
 	webclient: "http://" + serverAddr + "/webclient", // client
     // webclient: "http://192.168.0.122:8080/", // debug client
     // testAppId: "745612252752642048",
-	testAppId: "879819862925377536",
+	testAppId: "899728731164114944",
 	// test appurl
 	// testAppUrl: "http://127.0.0.1:8080/cloudlark/webclient/#/?appServer=192.168.0.223&appPort=10002&taskId=123456&debugTask=true&logLevel=info&",
 }

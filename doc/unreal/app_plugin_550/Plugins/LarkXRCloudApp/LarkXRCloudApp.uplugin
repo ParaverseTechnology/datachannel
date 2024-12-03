@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "LarkXRCloudApp",
+	"Description": "Datachannel for larkxr system",
+	"Category": "Streaming",
+	"CreatedBy": "paraverse",
+	"CreatedByURL": "https://github.com/pingxingyun/datachannel",
+	"DocsURL": "https://github.com/pingxingyun/datachannel",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "LarkXRCloudApp",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

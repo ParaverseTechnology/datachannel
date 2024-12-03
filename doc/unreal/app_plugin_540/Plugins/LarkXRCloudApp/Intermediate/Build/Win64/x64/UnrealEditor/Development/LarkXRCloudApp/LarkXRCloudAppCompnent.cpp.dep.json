@@ -1,0 +1,23 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\work\\pxy\\datachannel-main\\datachannel-main\\doc\\unreal\\app_plugin_540\\plugins\\larkxrcloudapp\\source\\larkxrcloudapp\\private\\larkxrcloudappcompnent.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\work\\pxy\\datachannel-main\\datachannel-main\\doc\\unreal\\app_plugin_540\\intermediate\\build\\win64\\x64\\app_plugin_540editor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\work\\pxy\\datachannel-main\\datachannel-main\\doc\\unreal\\app_plugin_540\\plugins\\larkxrcloudapp\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\larkxrcloudapp\\definitions.larkxrcloudapp.h",
+            "d:\\work\\pxy\\datachannel-main\\datachannel-main\\doc\\unreal\\app_plugin_540\\plugins\\larkxrcloudapp\\source\\larkxrcloudapp\\public\\larkxrcloudappcompnent.h",
+            "d:\\work\\pxy\\datachannel-main\\datachannel-main\\doc\\unreal\\app_plugin_540\\plugins\\larkxrcloudapp\\source\\larkxrcloudapp\\public\\larkxrdatachannel.h",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\stdbool.h",
+            "d:\\work\\pxy\\datachannel-main\\datachannel-main\\doc\\unreal\\app_plugin_540\\plugins\\larkxrcloudapp\\intermediate\\build\\win64\\unrealeditor\\inc\\larkxrcloudapp\\uht\\larkxrcloudappcompnent.generated.h",
+            "d:\\work\\pxy\\datachannel-main\\datachannel-main\\doc\\unreal\\app_plugin_540\\plugins\\larkxrcloudapp\\source\\larkxrcloudapp\\public\\larkxraivoice.h",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\string",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\xstring",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\__msvc_sanitizer_annotate_container.hpp",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\xpolymorphic_allocator.h",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\cctype"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,3 +1,4 @@
+/.vs
 /Binaries
 /Build
 /DerivedDataCache
@@ -5,3 +6,4 @@
 /Saved
 /WindowsNoEditor
 /output_vr
+/Intermediate

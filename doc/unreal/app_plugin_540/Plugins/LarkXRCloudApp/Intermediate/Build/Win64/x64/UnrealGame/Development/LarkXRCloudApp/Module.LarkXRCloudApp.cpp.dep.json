@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\work\\pxy\\datachannel-main\\datachannel-main\\doc\\unreal\\app_plugin_540\\plugins\\larkxrcloudapp\\intermediate\\build\\win64\\x64\\unrealgame\\development\\larkxrcloudapp\\module.larkxrcloudapp.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\work\\pxy\\datachannel-main\\datachannel-main\\doc\\unreal\\app_plugin_540\\intermediate\\build\\win64\\x64\\app_plugin_540\\development\\engine\\sharedpch.engine.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\work\\pxy\\datachannel-main\\datachannel-main\\doc\\unreal\\app_plugin_540\\plugins\\larkxrcloudapp\\intermediate\\build\\win64\\x64\\unrealgame\\development\\larkxrcloudapp\\definitions.larkxrcloudapp.h",
+            "d:\\work\\pxy\\datachannel-main\\datachannel-main\\doc\\unreal\\app_plugin_540\\plugins\\larkxrcloudapp\\intermediate\\build\\win64\\unrealgame\\inc\\larkxrcloudapp\\uht\\larkxrcloudapp.init.gen.cpp",
+            "d:\\work\\pxy\\datachannel-main\\datachannel-main\\doc\\unreal\\app_plugin_540\\plugins\\larkxrcloudapp\\intermediate\\build\\win64\\unrealgame\\inc\\larkxrcloudapp\\uht\\larkxrcloudappcompnent.gen.cpp",
+            "d:\\work\\pxy\\datachannel-main\\datachannel-main\\doc\\unreal\\app_plugin_540\\plugins\\larkxrcloudapp\\source\\larkxrcloudapp\\public\\larkxrcloudappcompnent.h",
+            "d:\\work\\pxy\\datachannel-main\\datachannel-main\\doc\\unreal\\app_plugin_540\\plugins\\larkxrcloudapp\\source\\larkxrcloudapp\\public\\larkxrdatachannel.h",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\stdbool.h",
+            "d:\\work\\pxy\\datachannel-main\\datachannel-main\\doc\\unreal\\app_plugin_540\\plugins\\larkxrcloudapp\\intermediate\\build\\win64\\unrealgame\\inc\\larkxrcloudapp\\uht\\larkxrcloudappcompnent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
