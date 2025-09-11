@@ -249,12 +249,15 @@ namespace lark
         // Parameter: void * user_data
         public int RegisterAivoiceCallback()
         {
+#if PLATFORM_STANDALONE_WIN
             // return lr_client_register_aivoice_callback(cs_on_aivoice_callback, IntPtr.Zero);
             return lr_client_register_aivoice_callback(c_on_aivoice_callback, IntPtr.Zero);
+#endif
+            return 0;
         }
-        #endregion
+#endregion
 
-        #region native callbacks
+#region native callbacks
         // callbacks
         private delegate void on_taskstatus(bool status/*true:客户端连接 false:客户端断开*/, string taskId, IntPtr user_data);
         private delegate void on_connected(IntPtr user_data);
@@ -317,9 +320,9 @@ namespace lark
                 instance?.onClose?.Invoke((ErrorCode)code);
             }));
         }
-        #endregion
+#endregion
 
-        #region native LarkXRDataChannel.h
+#region native LarkXRDataChannel.h
         [DllImport("LarkXRDataChannel64")]
         private static extern void lr_client_register_taskstatus_callback(on_taskstatus taskstatus, IntPtr user_data);
         // 异步连接LarkXR服务端,必须传入回调函数，返回XR_ERROR_SUCCESS代表接口创建成功
@@ -329,9 +332,9 @@ namespace lark
         private static extern int lr_client_send(int dataType, ref byte data, int size);
         [DllImport("LarkXRDataChannel64")]
         private static extern void lr_client_stop();
-        #endregion
+#endregion
 
-        #region aivoice native callbacks
+#region aivoice native callbacks
         // callbacks
         private delegate void on_aivoice_callback(NativeAiVoicePacket packet, IntPtr user_data);
 
@@ -391,11 +394,13 @@ namespace lark
                 }));
             }
         }
-        #endregion
+#endregion
 
-        #region native LarkXRAiVoice.h
+#if PLATFORM_STANDALONE_WIN
+#region native LarkXRAiVoice.h
         [DllImport("LarkXRDataChannel64")]
         private static extern int lr_client_register_aivoice_callback(on_aivoice_callback cb, IntPtr user_data);
-        #endregion
+#endregion
+#endif
     }
 }

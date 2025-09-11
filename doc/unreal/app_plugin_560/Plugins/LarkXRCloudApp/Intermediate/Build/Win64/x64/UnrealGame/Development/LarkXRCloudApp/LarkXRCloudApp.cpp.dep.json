@@ -1,0 +1,22 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\work\\data_channel\\datachannel\\doc\\unreal\\app_plugin_560\\plugins\\larkxrcloudapp\\source\\larkxrcloudapp\\private\\larkxrcloudapp.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\work\\data_channel\\datachannel\\doc\\unreal\\app_plugin_560\\intermediate\\build\\win64\\x64\\app_plugin_560\\development\\engine\\sharedpch.engine.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\work\\data_channel\\datachannel\\doc\\unreal\\app_plugin_560\\plugins\\larkxrcloudapp\\intermediate\\build\\win64\\x64\\unrealgame\\development\\larkxrcloudapp\\definitions.larkxrcloudapp.h",
+            "d:\\work\\data_channel\\datachannel\\doc\\unreal\\app_plugin_560\\plugins\\larkxrcloudapp\\source\\larkxrcloudapp\\public\\larkxrcloudapp.h",
+            "e:\\work\\unreal\\engine\\ue_5.6\\engine\\source\\runtime\\projects\\public\\interfaces\\ipluginmanager.h",
+            "e:\\work\\unreal\\engine\\ue_5.6\\engine\\source\\runtime\\projects\\public\\plugindescriptor.h",
+            "e:\\work\\unreal\\engine\\ue_5.6\\engine\\source\\runtime\\projects\\public\\custombuildsteps.h",
+            "e:\\work\\unreal\\engine\\ue_5.6\\engine\\source\\runtime\\projects\\public\\localizationdescriptor.h",
+            "e:\\work\\unreal\\engine\\ue_5.6\\engine\\source\\runtime\\projects\\public\\moduledescriptor.h",
+            "e:\\work\\unreal\\engine\\ue_5.6\\engine\\source\\runtime\\projects\\public\\plugindisalloweddescriptor.h",
+            "e:\\work\\unreal\\engine\\ue_5.6\\engine\\source\\runtime\\projects\\public\\pluginreferencedescriptor.h",
+            "e:\\work\\unreal\\engine\\ue_5.6\\engine\\source\\runtime\\projects\\public\\versescope.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

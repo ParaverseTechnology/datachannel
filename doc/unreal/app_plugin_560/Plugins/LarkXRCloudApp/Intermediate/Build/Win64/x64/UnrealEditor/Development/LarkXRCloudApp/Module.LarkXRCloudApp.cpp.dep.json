@@ -1,0 +1,21 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\work\\data_channel\\datachannel\\doc\\unreal\\app_plugin_560\\plugins\\larkxrcloudapp\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\larkxrcloudapp\\module.larkxrcloudapp.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\work\\data_channel\\datachannel\\doc\\unreal\\app_plugin_560\\intermediate\\build\\win64\\x64\\app_plugin_560editor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\work\\data_channel\\datachannel\\doc\\unreal\\app_plugin_560\\plugins\\larkxrcloudapp\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\larkxrcloudapp\\definitions.larkxrcloudapp.h",
+            "d:\\work\\data_channel\\datachannel\\doc\\unreal\\app_plugin_560\\plugins\\larkxrcloudapp\\intermediate\\build\\win64\\unrealeditor\\inc\\larkxrcloudapp\\uht\\larkxrcloudapp.init.gen.cpp",
+            "d:\\work\\data_channel\\datachannel\\doc\\unreal\\app_plugin_560\\plugins\\larkxrcloudapp\\intermediate\\build\\win64\\unrealeditor\\inc\\larkxrcloudapp\\uht\\larkxrcloudappcompnent.gen.cpp",
+            "d:\\work\\data_channel\\datachannel\\doc\\unreal\\app_plugin_560\\plugins\\larkxrcloudapp\\source\\larkxrcloudapp\\public\\larkxrcloudappcompnent.h",
+            "d:\\work\\data_channel\\datachannel\\doc\\unreal\\app_plugin_560\\plugins\\larkxrcloudapp\\source\\larkxrcloudapp\\public\\larkxrdatachannel.h",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.44.35207\\include\\stdbool.h",
+            "d:\\work\\data_channel\\datachannel\\doc\\unreal\\app_plugin_560\\plugins\\larkxrcloudapp\\intermediate\\build\\win64\\unrealeditor\\inc\\larkxrcloudapp\\uht\\larkxrcloudappcompnent.generated.h",
+            "d:\\work\\data_channel\\datachannel\\doc\\unreal\\app_plugin_560\\plugins\\larkxrcloudapp\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\larkxrcloudapp\\permoduleinline.gen.cpp",
+            "e:\\work\\unreal\\engine\\ue_5.6\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
