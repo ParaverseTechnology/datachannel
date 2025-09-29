@@ -1,4 +1,4 @@
-# LarkXR DataChannel SDK 3.2.8.1
+# LarkXR DataChannel SDK 3.2.39.0
 
 ---
 

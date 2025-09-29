@@ -48,7 +48,7 @@
 #define WITH_CEF3 1
 #define WITH_LIVE_CODING 1
 #define UE_LIVE_CODING_ENGINE_DIR "C:\\Program Files\\Epic Games\\UE_5.2\\Engine"
-#define UE_LIVE_CODING_PROJECT "C:\\work\\git\\datachannel\\doc\\unreal\\app_plugin_520\\app_plugin_520.uproject"
+#define UE_LIVE_CODING_PROJECT "C:\\work\\git\\datachannel-main\\doc\\unreal\\app_plugin_520\\app_plugin_520.uproject"
 #define WITH_CPP_MODULES 0
 #define WITH_CPP_COROUTINES 0
 #define WITH_PROCESS_PRIORITY_CONTROL 0

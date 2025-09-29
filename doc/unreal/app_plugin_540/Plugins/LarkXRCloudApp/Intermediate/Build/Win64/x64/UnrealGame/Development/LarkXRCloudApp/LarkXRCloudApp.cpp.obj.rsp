@@ -1,11 +1,11 @@
-"D:\work\pxy\datachannel-main\datachannel-main\doc\unreal\app_plugin_540\Plugins\LarkXRCloudApp\Source\LarkXRCloudApp\Private\LarkXRCloudApp.cpp"
-/FI"D:\work\pxy\datachannel-main\datachannel-main\doc\unreal\app_plugin_540\Intermediate\Build\Win64\x64\app_plugin_540\Development\Engine\SharedPCH.Engine.Project.ValApi.Cpp20.h"
-/FI"D:\work\pxy\datachannel-main\datachannel-main\doc\unreal\app_plugin_540\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\x64\UnrealGame\Development\LarkXRCloudApp\Definitions.LarkXRCloudApp.h"
-/Yu"D:\work\pxy\datachannel-main\datachannel-main\doc\unreal\app_plugin_540\Intermediate\Build\Win64\x64\app_plugin_540\Development\Engine\SharedPCH.Engine.Project.ValApi.Cpp20.h"
-/Fp"D:\work\pxy\datachannel-main\datachannel-main\doc\unreal\app_plugin_540\Intermediate\Build\Win64\x64\app_plugin_540\Development\Engine\SharedPCH.Engine.Project.ValApi.Cpp20.h.pch"
-/Fo"D:\work\pxy\datachannel-main\datachannel-main\doc\unreal\app_plugin_540\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\x64\UnrealGame\Development\LarkXRCloudApp\LarkXRCloudApp.cpp.obj"
-/sourceDependencies "D:\work\pxy\datachannel-main\datachannel-main\doc\unreal\app_plugin_540\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\x64\UnrealGame\Development\LarkXRCloudApp\LarkXRCloudApp.cpp.dep.json"
-@"D:\work\pxy\datachannel-main\datachannel-main\doc\unreal\app_plugin_540\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\x64\UnrealGame\Development\LarkXRCloudApp\LarkXRCloudApp.Shared.rsp"
+"D:\work\data_channel\datachannel\doc\unreal\app_plugin_540\Plugins\LarkXRCloudApp\Source\LarkXRCloudApp\Private\LarkXRCloudApp.cpp"
+/FI"D:\work\data_channel\datachannel\doc\unreal\app_plugin_540\Intermediate\Build\Win64\x64\app_plugin_540\Development\Engine\SharedPCH.Engine.Project.ValApi.Cpp20.h"
+/FI"D:\work\data_channel\datachannel\doc\unreal\app_plugin_540\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\x64\UnrealGame\Development\LarkXRCloudApp\Definitions.LarkXRCloudApp.h"
+/Yu"D:\work\data_channel\datachannel\doc\unreal\app_plugin_540\Intermediate\Build\Win64\x64\app_plugin_540\Development\Engine\SharedPCH.Engine.Project.ValApi.Cpp20.h"
+/Fp"D:\work\data_channel\datachannel\doc\unreal\app_plugin_540\Intermediate\Build\Win64\x64\app_plugin_540\Development\Engine\SharedPCH.Engine.Project.ValApi.Cpp20.h.pch"
+/Fo"D:\work\data_channel\datachannel\doc\unreal\app_plugin_540\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\x64\UnrealGame\Development\LarkXRCloudApp\LarkXRCloudApp.cpp.obj"
+/sourceDependencies "D:\work\data_channel\datachannel\doc\unreal\app_plugin_540\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\x64\UnrealGame\Development\LarkXRCloudApp\LarkXRCloudApp.cpp.dep.json"
+@"D:\work\data_channel\datachannel\doc\unreal\app_plugin_540\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\x64\UnrealGame\Development\LarkXRCloudApp\LarkXRCloudApp.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi

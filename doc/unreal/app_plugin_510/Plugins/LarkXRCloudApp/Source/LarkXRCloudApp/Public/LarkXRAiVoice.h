@@ -11,7 +11,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-	#include"LarkXRDataChannel.h"
+#include"LarkXRDataChannel.h"
 
 	struct AiVoicePacket
 	{
@@ -30,9 +30,9 @@ extern "C" {
 		int		size_byte;			//每一包的字节数
 		bool	last_packet;		//是否为最后一包
 	};
-	typedef void(*on_aivoice_callback)(struct AiVoicePacket* packet,void* user_data);
+	typedef void(*on_aivoice_callback)(struct AiVoicePacket* packet, void* user_data);
 
-	
+
 	//************************************
 	// Method:    lr_client_register_aivoice_callback
 	// FullName:  lr_client_register_aivoice_callback
@@ -42,7 +42,7 @@ extern "C" {
 	// Parameter: on_aivoice_callback cb
 	// Parameter: void * user_data
 	//************************************
-	LARKXR_API int  DC_CALL lr_client_register_aivoice_callback(on_aivoice_callback cb,void* user_data);
+	LARKXR_API int  DC_CALL lr_client_register_aivoice_callback(on_aivoice_callback cb, void* user_data);
 
 
 

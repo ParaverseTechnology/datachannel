@@ -20,5 +20,12 @@ public class LarkXRCloudAppLibrary : ModuleRules
 			// Ensure that the DLL is staged along with the executable
 			RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/LarkXRCloudAppLibrary/Win64/LarkXRDataChannel64.dll");
 		}
+		else if (Target.Platform == UnrealTargetPlatform.Linux)
+		{
+			string ExampleSoPath = Path.Combine("$(PluginDir)", "Binaries", "ThirdParty", "LarkXRCloudAppLibrary", "Linux", "x86_64-unknown-linux-gnu", "libLarkXRDataChannel64.so");
+			PublicAdditionalLibraries.Add(ExampleSoPath);
+			PublicDelayLoadDLLs.Add(ExampleSoPath);
+			RuntimeDependencies.Add(ExampleSoPath);
+		}
 	}
 }

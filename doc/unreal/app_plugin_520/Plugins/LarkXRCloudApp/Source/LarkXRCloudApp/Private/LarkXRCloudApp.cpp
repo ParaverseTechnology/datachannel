@@ -18,7 +18,9 @@ void FLarkXRCloudAppModule::StartupModule()
 	FString LibraryPath;
 #if PLATFORM_WINDOWS
 	LibraryPath = FPaths::Combine(*BaseDir, TEXT("Binaries/ThirdParty/LarkXRCloudAppLibrary/Win64/LarkXRDataChannel64.dll"));
-#endif // PLATFORM_WINDOWS
+#elif PLATFORM_LINUX
+	LibraryPath = FPaths::Combine(*BaseDir, TEXT("Binaries/ThirdParty/LarkXRCloudAppLibrary/Linux/x86_64-unknown-linux-gnu/libLarkXRDataChannel64.so"));
+#endif 
 
 
 	ExampleLibraryHandle = !LibraryPath.IsEmpty() ? FPlatformProcess::GetDllHandle(*LibraryPath) : nullptr;
@@ -39,8 +41,10 @@ void FLarkXRCloudAppModule::ShutdownModule()
 	// we call this function before unloading the module.
 
 	// Free the dll handle
-	FPlatformProcess::FreeDllHandle(ExampleLibraryHandle);
-	ExampleLibraryHandle = nullptr;
+	if (ExampleLibraryHandle != nullptr) {
+		FPlatformProcess::FreeDllHandle(ExampleLibraryHandle);
+		ExampleLibraryHandle = nullptr;
+	} 
 }
 
 #undef LOCTEXT_NAMESPACE

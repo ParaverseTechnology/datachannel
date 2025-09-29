@@ -25,7 +25,7 @@ $(document).ready(function() {
 		} else if (config.testAppId) {
             enterApp(config.testAppId);
         } else {
-            $.get(config.server + "getAppliList", function(res) {
+            $.get(config.server + "appli/getAppliList", function(res) {
                 if (res && res.code === 1000) {
                     console.log("load list success", res.result.records);
                     if (res.result.records && res.result.records.length > 0) {
@@ -44,8 +44,8 @@ $(document).ready(function() {
 		$("#iframe").attr("src", "");
     });
     function enterApp(appliId) {
-		console.log("enter appli:", config.server + "getEnterAppliInfo?appliId=" + appliId);
-		$.get(config.server + "getEnterAppliInfo?appliId=" + appliId, function(res){
+		console.log("enter appli:", config.server + "appli/getStartInfo?appliId=" + appliId);
+		$.get(config.server + "appli/getStartInfo?appliId=" + appliId, function(res){
 			console.log("enter appli res:", res, joinParam(res.result));
 			if (res && res.code == 1000) {
 				$("#iframe").attr("src", config.webclient + "?" + joinParam(res.result));

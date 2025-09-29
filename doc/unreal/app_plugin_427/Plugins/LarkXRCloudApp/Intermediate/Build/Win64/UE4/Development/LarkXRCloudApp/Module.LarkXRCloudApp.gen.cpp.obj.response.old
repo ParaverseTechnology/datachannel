@@ -28,7 +28,7 @@
 /wd4244
 /wd4838
 /I .
-/I D:\work\data_channel\unreal\app_plugin\app_plugin_427_1\Plugins\LarkXRCloudApp\Source\LarkXRCloudApp\Private
+/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Source\LarkXRCloudApp\Private
 /I ..\Intermediate\Build\Win64\UE4\Inc\CoreUObject
 /I Runtime
 /I Runtime\CoreUObject\Public
@@ -332,11 +332,11 @@
 /I ..\Intermediate\Build\Win64\UE4\Inc\AnimationCore
 /I Runtime\AnimationCore\Public
 /I Runtime\AnimationCore
-/I D:\work\data_channel\unreal\app_plugin\app_plugin_427_1\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Inc\LarkXRCloudApp
-/I D:\work\data_channel\unreal\app_plugin\app_plugin_427_1\Plugins\LarkXRCloudApp\Source
-/I D:\work\data_channel\unreal\app_plugin\app_plugin_427_1\Plugins\LarkXRCloudApp\Source\LarkXRCloudApp\Public
-/I D:\work\data_channel\unreal\app_plugin\app_plugin_427_1\Plugins\LarkXRCloudApp\Source\LarkXRCloudApp
-/I D:\work\data_channel\unreal\app_plugin\app_plugin_427_1\Plugins\LarkXRCloudApp\Source\ThirdParty
+/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Inc\LarkXRCloudApp
+/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Source
+/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Source\LarkXRCloudApp\Public
+/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Source\LarkXRCloudApp
+/I D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Source\ThirdParty
 /I Runtime\Projects\Public
 /I Runtime\Projects
 /I Runtime\Projects\Public\Interfaces
@@ -363,18 +363,18 @@
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include
 /I ThirdParty\PhysX3\APEX_1.4\shared\internal\include
-/I "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\INCLUDE"
+/I "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE"
 /I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
-/FI"D:\work\data_channel\unreal\app_plugin\app_plugin_427_1\Intermediate\Build\Win64\app_plugin\Development\Engine\SharedPCH.Engine.h"
-/Yu"D:\work\data_channel\unreal\app_plugin\app_plugin_427_1\Intermediate\Build\Win64\app_plugin\Development\Engine\SharedPCH.Engine.h"
-/Fp"D:\work\data_channel\unreal\app_plugin\app_plugin_427_1\Intermediate\Build\Win64\app_plugin\Development\Engine\SharedPCH.Engine.h.pch"
-"D:\work\data_channel\unreal\app_plugin\app_plugin_427_1\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Development\LarkXRCloudApp\Module.LarkXRCloudApp.gen.cpp"
-/FI"D:\work\data_channel\unreal\app_plugin\app_plugin_427_1\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Development\LarkXRCloudApp\Definitions.LarkXRCloudApp.h"
-/Fo"D:\work\data_channel\unreal\app_plugin\app_plugin_427_1\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Development\LarkXRCloudApp\Module.LarkXRCloudApp.gen.cpp.obj"
+/FI"D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Intermediate\Build\Win64\app_plugin\Development\Engine\SharedPCH.Engine.h"
+/Yu"D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Intermediate\Build\Win64\app_plugin\Development\Engine\SharedPCH.Engine.h"
+/Fp"D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Intermediate\Build\Win64\app_plugin\Development\Engine\SharedPCH.Engine.h.pch"
+"D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Development\LarkXRCloudApp\Module.LarkXRCloudApp.gen.cpp"
+/FI"D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Development\LarkXRCloudApp\Definitions.LarkXRCloudApp.h"
+/Fo"D:\work\data_channel\datachannel\doc\unreal\app_plugin_427\Plugins\LarkXRCloudApp\Intermediate\Build\Win64\UE4\Development\LarkXRCloudApp\Module.LarkXRCloudApp.gen.cpp.obj"
 /TP
 /GR-
 /W4

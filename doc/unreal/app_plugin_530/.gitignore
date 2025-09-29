@@ -4,3 +4,7 @@
 /Intermediate
 /Saved
 /WindowsNoEditor
+.vs
+.vsconfig
+/Windows
+/Linux
