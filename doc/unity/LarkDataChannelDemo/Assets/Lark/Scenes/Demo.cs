@@ -1,5 +1,7 @@
 // 是否使用 Naudio 加载MP3
+// Whether to use NAudio for loading MP3
 // NAudio 不支持 ENABLE_IL2CPP 
+// NAudio does not support ENABLE_IL2CPP
 #if ENABLE_MONO
 #define ENABLE_NAUDIO
 #endif
@@ -32,6 +34,7 @@ public class Demo : MonoBehaviour
     public float sensitivetyMouseWheel = 10f;
 
     // 是否支持智能语音服务
+    // Whether to support AI voice service
     public bool supportAiVoice = true;
 
     private GetTaskInfo getTaskInfo = new GetTaskInfo();
@@ -47,8 +50,10 @@ public class Demo : MonoBehaviour
         Debug.Assert(receiveText != null);
 
         // 异步获取。
+        // Asynchronous acquisition
         // 注意添加 DataChannelNativeApi onTaskStatus 代理
-        taskIdText.text += lark.LarkManager.Instance.TaskId;
+        // Note: Add DataChannelNativeApi onTaskStatus delegate
+        taskIdText.text += "Task ID: " + lark.LarkManager.Instance.TaskId;
 
         lark.LarkManager larkManager = lark.LarkManager.Instance;
         larkManager.DataChannel.onTaskStatus += OnTaskStatus;
@@ -57,6 +62,7 @@ public class Demo : MonoBehaviour
         larkManager.DataChannel.onBinary += OnBinaryMessaeg;
         larkManager.DataChannel.onClose += OnClose;
         // 智能语音相关回调 
+        // AI voice related callbacks
         larkManager.DataChannel.onAiVoiceURL += OnAiVoiceURL;
         larkManager.DataChannel.onAiVoiceStream += OnAiVoiceStream;
 
@@ -65,25 +71,25 @@ public class Demo : MonoBehaviour
 
         if (restult == lark.DataChannelNativeApi.ApiRestult.XR_SUCCESS)
         {
-            if (supportAiVoice)
-            {
-                Debug.Log("try start ai voice");
+        if (supportAiVoice)
+        {
+            Debug.Log("Try to start AI voice");
 
                 restult = lark.LarkManager.Instance.StartAiVoice();
                 if (restult != lark.DataChannelNativeApi.ApiRestult.XR_SUCCESS) {
-                    statusText.text = "Start AiVoice Failed. Result " + restult.ToString();
+                    statusText.text = "Start AiVoice Failed. Result: " + restult.ToString();
                 } else
                 {
                     statusText.text = "Start AiVoice Success.";
-                    Debug.Log("start ai voice success");
+                    Debug.Log("Start AI voice success");
                 }
             } else
             {
-                statusText.text = "Start DataChannel Connect Success.";
+                statusText.text = "DataChannel Connection Started Successfully.";
             }
         } else
         {
-            statusText.text = "Start Failed. Result " + restult.ToString();
+            statusText.text = "Start Failed. Result: " + restult.ToString();
         }
 
         // default carmera 0
@@ -103,16 +109,19 @@ public class Demo : MonoBehaviour
     private void UpdateCamera()
     {
         // 滚轮实现镜头缩进和拉远
+        // Mouse wheel for zoom in and zoom out
         if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
             // Camera.main.fieldOfView = Camera.main.fieldOfView - Input.GetAxis("Mouse ScrollWheel") * sensitivetyMouseWheel;
         }
         // 按着鼠标左键实现视角转动
+        // Hold left mouse button to rotate view
         if (Input.GetMouseButton(0))
         {
             Camera.main.transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityMouse, 0);
         }
         // 键盘按钮←/a和→/d实现视角水平移动，键盘按钮↑/w和↓/s实现视角水平旋转
+        // Keyboard arrows/A/D for horizontal movement, W/S for vertical movement
         if (Input.GetAxis("Horizontal") != 0)
         {
             Camera.main.transform.Translate(Input.GetAxis("Horizontal") * sensitivetyKeyBoard, 0, 0);
@@ -252,16 +261,16 @@ public class Demo : MonoBehaviour
             {
                 // webclient request switch camera.
                 case JsonCmd.CmdType.CMD_SWITCH_CAMERA:
-                    receiveText.text = "收到 JSON CMD： 切换摄像机 ( " + cmd.data + " )";
+                    receiveText.text = "Received JSON CMD: Switch Camera ( " + cmd.data + " )";
                     SwitchCamera(cmd.data);
                     break;
                 // webclient request toggle object.
                 case JsonCmd.CmdType.CMD_TOGGLE_OBJECT:
-                    receiveText.text = "收到 JSON CMD 切换物体 ( " + cmd.data + " ) 显示状态";
+                    receiveText.text = "Received JSON CMD: Toggle Object ( " + cmd.data + " ) visibility";
                     ToggleGameObject(cmd.data);
                     break;
                 case JsonCmd.CmdType.CMD_WINDOW_RESIZE:
-                    receiveText.text = "收到网页窗口大小 width " + cmd.clientWidth + " height " + cmd.clientHeight;
+                    receiveText.text = "Received window size: width " + cmd.clientWidth + " height " + cmd.clientHeight;
                     if (cmd.clientWidth != 0 && cmd.clientHeight != 0) { 
                         SetWindowSize(cmd.clientWidth, cmd.clientHeight);
                     }
@@ -295,10 +304,10 @@ public class Demo : MonoBehaviour
 
     #region callbacks
     public void OnTaskStatus(bool status, string taskId) {
-        Debug.Log("on task status change " + status + " "  +taskId);
-        taskIdText.text = "收到 TaskID " + taskId + " 是否开启状态 " + status;
+        Debug.Log("Task status changed: " + status + " TaskID: " + taskId);
+        taskIdText.text = "TaskID: " + taskId + " Status: " + status;
         if (!status) {
-            Debug.Log("task 关闭，恢复初始状态");
+            Debug.Log("Task closed, restoring initial state");
             // default carmera 0
             SwitchCamera(0);
             // default hide object 0
@@ -307,7 +316,7 @@ public class Demo : MonoBehaviour
     }
     public void OnConnected()
     {
-        statusText.text = "连接成功";
+        statusText.text = "Connection Successful";
 
         // send infos to client.
         SendCameraLoaded();
@@ -325,22 +334,24 @@ public class Demo : MonoBehaviour
     }
     public void OnClose(lark.DataChannelNativeApi.ErrorCode code)
     {
-        statusText.text = "通道已关闭 code " + code;
+        statusText.text = "Channel closed. Code: " + code;
     }
     #endregion
     #region aivoice callback
     public void OnAiVoiceURL(lark.DataChannelNativeApi.AiVoiceURL aiVoiceURL) {
-        Debug.Log("OnAiVoiceURL " + aiVoiceURL.nlg + " url " + aiVoiceURL.online_url);
-        receiveText.text = "收到智能语音 URL 文本: " + aiVoiceURL.nlg + " ;url " + aiVoiceURL.online_url;
+        Debug.Log("OnAiVoiceURL: " + aiVoiceURL.nlg + " URL: " + aiVoiceURL.online_url);
+        receiveText.text = "AI Voice URL Text: " + aiVoiceURL.nlg + " ; URL: " + aiVoiceURL.online_url;
 
         // WARNING TODO
         // NAudio 不支持 IL2CPP 
+        // WARNING TODO
+        // NAudio does not support IL2CPP
         _ = StartCoroutine(nameof(GetAudioClip), aiVoiceURL.online_url);
     }
 
     public void OnAiVoiceStream(lark.DataChannelNativeApi.AiVoiceStream aiVoiceStream) {
-        Debug.Log("OnAiVoiceURL " + aiVoiceStream.nlg);
-        receiveText.text = "收到智能语音 Stream 文本: " + aiVoiceStream.nlg;
+        Debug.Log("OnAiVoiceStream: " + aiVoiceStream.nlg);
+        receiveText.text = "AI Voice Stream Text: " + aiVoiceStream.nlg;
     }
 
     IEnumerator GetAudioClip(string url)
@@ -356,12 +367,15 @@ public class Demo : MonoBehaviour
         {
             // WARNING TODO
             // NAudio 不支持 IL2CPP 
+            // WARNING TODO
+            // NAudio does not support IL2CPP
 #if ENABLE_NAUDIO
             Debug.Log("download mp3 length " + www.downloadHandler.data.Length);
 
             byte[] results = www.downloadHandler.data;
 
             // 使用 NAudio 将 mp3 转换为 wave 播放
+            // Use NAudio to convert MP3 to wave for playback
             using (var stream = new MemoryStream(results)) { 
                 var reader = new Mp3FileReader(stream);
                 var wo = new WaveOutEvent();

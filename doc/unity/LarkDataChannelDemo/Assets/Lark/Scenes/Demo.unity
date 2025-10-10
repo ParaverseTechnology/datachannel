@@ -490,7 +490,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u63A5\u6536\u5230\uFF1A"
+  m_Text: "Receive\uFF1A"
 --- !u!222 &388568182
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1215,6 +1215,10 @@ MonoBehaviour:
   - {fileID: 619243472}
   - {fileID: 1920592525}
   - {fileID: 1336941712}
+  sensitivityMouse: 2
+  sensitivetyKeyBoard: 0.1
+  sensitivetyMouseWheel: 10
+  supportAiVoice: 1
 --- !u!1 &1287235819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,7 +1983,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u72B6\u6001\uFF1A"
+  m_Text: "Status\uFF1A"
 --- !u!222 &1615619068
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2057,7 +2061,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u53D1\u9001x1000"
+  m_Text: Sendx1000
 --- !u!222 &1722970012
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2135,7 +2139,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u53D1\u9001"
+  m_Text: Send
 --- !u!222 &1848248718
 CanvasRenderer:
   m_ObjectHideFlags: 0

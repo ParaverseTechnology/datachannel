@@ -125,9 +125,13 @@ struct AiVoicePacket {
 
 * [UE4.26](./doc/unreal/app_plugin_426/)
 * [UE4.27](./doc/unreal/app_plugin_427/)
-* [UE4.27](./doc/unreal/app_plugin_501/)
-* [UE4.27](./doc/unreal/app_plugin_510/)
-* [UE4.27](./doc/unreal/app_plugin_520/)
+* [UE5.0](./doc/unreal/app_plugin_501/)
+* [UE5.1](./doc/unreal/app_plugin_510/)
+* [UE5.2](./doc/unreal/app_plugin_520/)
+* [UE5.3](./doc/unreal/app_plugin_530/)
+* [UE5.4](./doc/unreal/app_plugin_540/)
+* [UE5.5](./doc/unreal/app_plugin_550/)
+* [UE5.6](./doc/unreal/app_plugin_560/)
 * [UEDeoc](./doc/unreal/ue4_datachannel_blueprint.md)
 
 ### [WebClient](./doc/unity/webclient/)
