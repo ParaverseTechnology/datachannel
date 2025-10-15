@@ -1,5 +1,5 @@
-// Lark Server 访问地址
-var serverAddr = "192.168.0.55:8181";
+// Lark Server Ip
+var serverAddr = "192.168.0.184:8181";
 
 var config = {
 	userLocalIP: true,
@@ -7,17 +7,17 @@ var config = {
 	webclient: "http://" + serverAddr + "/webclient", // client
     // webclient: "http://192.168.0.122:8080/", // debug client
     // testAppId: "745612252752642048",
-	testAppId: "899728731164114944",
+	testAppId: "1428037261722648576",
 	// test appurl
 	// testAppUrl: "http://127.0.0.1:8080/cloudlark/webclient/#/?appServer=192.168.0.223&appPort=10002&taskId=123456&debugTask=true&logLevel=info&",
 }
 
 
 $(document).ready(function() {
-    // 进入应用应用列表中获取的第一个应用。
+    
     $("#enter").on("click", function(e) {
         if (!config.server) {
-            alert("请设置 config.server");
+            alert("Please set config.server");
             return;
 		}
 		if (config.testAppUrl) {
@@ -25,7 +25,7 @@ $(document).ready(function() {
 		} else if (config.testAppId) {
             enterApp(config.testAppId);
         } else {
-            $.get(config.server + "appli/getAppliList", function(res) {
+            $.get(config.server + "getAppliList", function(res) {
                 if (res && res.code === 1000) {
                     console.log("load list success", res.result.records);
                     if (res.result.records && res.result.records.length > 0) {
@@ -39,13 +39,13 @@ $(document).ready(function() {
             });
         }
     })
-    // 关闭应用
+    // Close Application
     $("#close").on("click", function(){
 		$("#iframe").attr("src", "");
     });
     function enterApp(appliId) {
-		console.log("enter appli:", config.server + "appli/getStartInfo?appliId=" + appliId);
-		$.get(config.server + "appli/getStartInfo?appliId=" + appliId, function(res){
+		console.log("enter appli:", config.server + "/appli/getStartInfo?appliId=" + appliId);
+		$.get(config.server + "/appli/getStartInfo?appliId=" + appliId, function(res){
 			console.log("enter appli res:", res, joinParam(res.result));
 			if (res && res.code == 1000) {
 				$("#iframe").attr("src", config.webclient + "?" + joinParam(res.result));
@@ -69,29 +69,29 @@ $(document).ready(function() {
             onMessage: onMessage,
             listenKeyboard: true,
         })
-		// 监听消息
+		// Listen for messages
 		function onMessage(e) {
 			switch(e.data.type) {
-				// open
+			
 				case 20200:
-					console.log("通道开启", e.data.data);
-					$("#receive").text("通道开启");
-					// 同步客户端窗口大小
+					console.log("DataChannel Open", e.data.data);
+					$("#receive").text("DataChannel Open");
+				
 					syncClientWindowSize();
 					startSendClientWindowSize();
 					break;
 				case 20201:
-					console.log("通道关闭", e.data.data);
-					$("#receive").text("通道关闭");
+					console.log("DataChannel Close", e.data.data);
+					$("#receive").text("DataChannel Close");
 					break;
-				// 接收到字节消息
+				// Received byte message
 				case 20202:
-					console.log("接收到字节消息", e.data.data);
+					console.log("Received byte message", e.data.data);
 					$("#receive").text(e.data.data);
 					break;
-				// 接收到文本消息
+				// Received text message
 				case 20203:
-					console.log("接收到文本消息", e.data.data);
+					console.log("Received text message", e.data.data);
 					handleJsonCmd(e.data.data);
 					break;
 				default:
@@ -100,12 +100,12 @@ $(document).ready(function() {
 			}
 		};
 
-		// 发送字符消息。
+		// Send text message
 		function sendText(jsonStr) {
 			poster.sendTextToRenderSererAppDataChannel(jsonStr);
 		}
 
-		// 发送字节消息
+		// Send Byte message
 		function sendBinary(binary) {	
 			poster.sendBinaryToRenderServerAppDataChannel(binary);
 		}
